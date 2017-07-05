@@ -1,0 +1,123 @@
+WhatsMate API
+REST services
+single messages and group messages
+
+All users that should receive message need to register
+40 messages per day
+send only
+text only
+paid service $5-10 per month
+
+they recommend using Telegram - more reliable than WhatsApp
+
+
+QYUpSH8binmshQULnwgMTD1P4mbUp17YZlFjsnAadom6jJAqeO
+
+Yowsup
+https://github.com/tgalal/yowsup
+
+installation sudo pip install yowsup2 - outdated! clone from git
+git clone git://github.com/tgalal/yowsup.git
+cd yowsup
+sudo python setup.py install
+
+register phone via cli
+
+1
+yowsup-cli registration --cc <country code> --phone <country code><phone no> --requestcode sms --mcc <MCC code>
+For Germany: county code 49, MCCs: o2 26203, Telekom 26201, Vodafone 26202
+> will send an SMS to the mobile phone with a code
+2
+yowsup-cli registration --cc 49 --phone 4917667020717 --register <code received via sms> --mcc 26203
+>
+status: ok
+kind: free
+pw: +BaimGseHxbSScF3vTldHiWhr0o=
+price: 0,89 €
+price_expiration: 1501987180
+currency: EUR
+cost: 0.89
+expiration: 4444444444.0
+login: 4917667020717
+type: existing
+---
+status: ok
+kind: free
+pw: NPpELYnv4y50CJDnhfKxcZZwb38=
+price: 0,89 €
+price_expiration: 1502269557
+currency: EUR
+cost: 0.89
+expiration: 4444444444.0
+login: 4917667020717
+type: existing
+
+### !!! registration via android env and messaging via s40 env !!!
+yowsup-cli demos --yowsup --env s40 --login 4917667020717:NPpELYnv4y50CJDnhfKxcZZwb38=
+
+Notification: Notification
+From: 4915146708407-1499235426@g.us
+Type: w:gp2
+Participant: 4915146708407@s.whatsapp.net
+Creator: 4915146708407@s.whatsapp.net
+Create type: new
+Creation timestamp: 1499235426
+Subject: FossaTestGroup
+Subject owner: 4915146708407@s.whatsapp.net
+Subject timestamp: 1499235426
+Participants: {'4917667020717@s.whatsapp.net': None, '4915146708407@s.whatsapp.net': 'admin', '4917610407181@s.whatsapp.net': None}
+
+Group
+ID: 4915146708407-1499235426, Subject: FossaTestGroup, Creation: 1499235426, Creator: 4915146708407@s.whatsapp.net, Subject Owner: 4915146708407@s.whatsapp.net, Subject Time: 1499235426
+Participants: 4917667020717@s.whatsapp.net, 4915146708407@s.whatsapp.net, 4917610407181@s.whatsapp.net
+
+Message
+/message send 4915146708407-1499235426 "group test 1"
+
+{
+    "origin": "4917667020717",
+    "target": "4915146708407-1499235426",
+    "body": "REST test 2"
+}
+
+frank: 4915146708407
+
+danilo ohne whatsapp: 491717548662 - code: 804-438
+status: ok
+kind: free
+pw: vfV18k8Ftawkw/zd02Xzva2DBdg=
+price: 0,89 €
+price_expiration: 1502171391
+currency: EUR
+cost: 0.89
+expiration: 4444444444.0
+login: 491717548662
+type: new
+
+danilio whatsapp: 49
+Jens: 015171564662
+
+FossaTestCrew
+
+Modify the file yowsup/env/env.py
+Line:
+DEFAULT = "s40"
+For:
+DEFAULT = "android"
+
+Modify the file yowsup / env / env_android.py
+_MD5_CLASSES = "1naz8gL5pIYWbtaOZ3207g=="
+_VERSION = "2.17.16"
+
+
+
+
+wha tools
+https://wha.tools/
+
+Chat API
+https://github.com/mgp25/Chat-API
+
+Send SMS
+either via dedicated hardware + configuration software
+or service at 5-10ct per message
