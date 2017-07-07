@@ -4,7 +4,8 @@ import os
 
 class Config:
     defaults = {}
-    configfiles = ['whatsapp.conf', 'service/whatsapp.conf']
+    # load example.conf for defaults and overwrite if a real config has been created.
+    configfiles = ['whatsapp.example.conf', 'service/whatsapp.example.conf', 'whatsapp.conf', 'service/whatsapp.conf']
     config=None
 
     @classmethod
