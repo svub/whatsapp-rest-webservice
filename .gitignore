@@ -1,5 +1,6 @@
-# DB
+# Project specific stuff
 db.sqlite3
+whatsapp.conf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
