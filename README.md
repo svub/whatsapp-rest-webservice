@@ -18,14 +18,16 @@ Install the dependencies.
 
     pip install django djangorestframework coreapi
 
-Initialize Django by creating a superuser to secure the REST webservices and an empty database.
+Initialize Django by creating an empty database and a superuser to secure the REST webservices.
 
-    python manage.py createsuperuser
     python manage.py migrate
+    python manage.py createsuperuser
+When running createsuperuser, you'll have to choose which username and password you want to set to secure the service. It's required as otherwise anybody could send messages on your behalf.
 
 Initialize Yowsup
+You'll see a lot of console output running the following command - also warnings - and it'll take a while. But everything is good if it ends with "Finished processing dependencies for yowsup2==2.5.2".
 
-    python service/yowsup/setup.py install
+    cd service/yowsup/ && python setup.py install && cd ../../
 
 ## Setting up your WhatsApp account
 You'll need a registered WhatsApp account and a working mobile phone number to do the setup.
@@ -66,6 +68,6 @@ Testing the service locally - available for localhost only on port 8000.
 
     python manage.py runserver
 
-Run the service publically - you'll need sudo to run a service on port 80.
+Run the service publically - you'll need sudo to run a service on port 80 - or use a port like 8000 to run it without sudo.
 
     sudo python manage.py runserver 0.0.0.0:80
