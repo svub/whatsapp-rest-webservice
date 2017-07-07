@@ -71,3 +71,9 @@ Testing the service locally - available for localhost only on port 8000.
 Run the service publically - you'll need sudo to run a service on port 80 - or use a port like 8000 to run it without sudo.
 
     sudo python manage.py runserver 0.0.0.0:80
+
+And you need to add all URLs and IPs to the list "ALLOWED_HOSTS" in "service/settings.py", e.g.
+
+    ALLOWED_HOSTS = ['192.168.1.111', 'whatsapp-api.domain.com']
+
+Once the service runs, visit the URL you specified, e.g. localhost:8000 and login (link in upper right corner) to send messages. Select "Api root" in the upper left and then click the link in the middle with "messages" in the end. You can send messages using the auto-generated form. All the messages sent will be listed above. Only "target" and "body" are required. "Target" is the phone number you want to send your message to (again with country code but without "00" or "+") and "body" is the text you want to send.
