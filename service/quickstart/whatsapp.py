@@ -1,4 +1,5 @@
 from subprocess import Popen, PIPE
+from config import Config
 
 class WhatsApp:
 
@@ -8,8 +9,10 @@ class WhatsApp:
 
     # for the time being, only one account can be actived and run at the same time
     # no need for loading account's data from the DB for now
-    origin = '4917667020717'
-    password = 'NPpELYnv4y50CJDnhfKxcZZwb38='
+    #origin = '4917667020717'
+    #password = 'NPpELYnv4y50CJDnhfKxcZZwb38='
+    origin = Config.get('credentials', 'phone')
+    password = Config.get('credentials', 'password')
 
     # send a message to WhatsApp via CLI
     # Example: yowsup-cli demos --login 4917667020717:NPpELYnv4y50CJDnhfKxcZZwb38= --env s40 --send 4917610407181 "Hello World d1"
