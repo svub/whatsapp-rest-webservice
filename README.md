@@ -77,3 +77,20 @@ And you need to add all URLs and IPs to the list "ALLOWED_HOSTS" in "service/set
     ALLOWED_HOSTS = ['192.168.1.111', 'whatsapp-api.domain.com']
 
 Once the service runs, visit the URL you specified, e.g. localhost:8000 and login (link in upper right corner) to send messages. Select "Api root" in the upper left and then click the link in the middle with "messages" in the end. You can send messages using the auto-generated form. All the messages sent will be listed above. Only "target" and "body" are required. "Target" is the phone number you want to send your message to (again with country code but without "00" or "+") and "body" is the text you want to send.
+
+### Run on startup.
+To make it a proper service, edit "whatsapp-service" and change "DIR=" in line 14 to the location of your installation.
+If you're running Debian, copy this file to "/etc/init.d/". And run following commands to first register the service and also run it right away. Next time your system restarts, the service should be running by default.
+
+    sudo update-rc.d whatsapp-service defaults
+    sudo /etc/init.d/whatsapp-service start
+
+To stop it, run
+
+    sudo /etc/init.d/whatsapp-service stop
+
+See how it's doing with
+
+    sudo /etc/init.d/whatsapp-service status
+
+On Ubuntu, use upstart to setup the service.
