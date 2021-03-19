@@ -6,7 +6,7 @@ Django==1.11.3
 djangorestframework==3.6.3
 idna==2.5
 itypes==1.1.0
-Jinja2==2.9.6
+Jinja2==2.11.3
 MarkupSafe==1.0
 pytz==2017.2
 requests==2.18.1
